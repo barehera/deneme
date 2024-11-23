@@ -49,10 +49,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@ui/components/ui/dropdown-menu';
+import { DUMMY_USER } from '@/constants/dummy';
 
 export function AppSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="offcanvas" {...props}>
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader className="items-center">
         <Logo />
       </SidebarHeader>
@@ -86,7 +87,7 @@ function NavMain({
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
-          <>
+          <div key={item.title}>
             {item.items?.length ? (
               <Collapsible
                 key={item.title}
@@ -127,7 +128,7 @@ function NavMain({
                 </SidebarMenuButton>
               </SidebarMenuItem>
             )}
-          </>
+          </div>
         ))}
       </SidebarMenu>
     </SidebarGroup>
@@ -137,11 +138,7 @@ function NavMain({
 function NavUser() {
   const { isMobile } = useSidebar();
 
-  const user = {
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    avatar: '/avatars/shadcn.jpg',
-  };
+  const user = DUMMY_USER;
 
   return (
     <SidebarMenu>

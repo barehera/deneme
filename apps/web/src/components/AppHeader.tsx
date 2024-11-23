@@ -10,10 +10,10 @@ import { Button } from '@ui/components/ui/button';
 import { Menu } from 'lucide-react';
 
 const AppHeader = () => {
-  const { toggleSidebar, open } = useSidebar();
+  const { toggleSidebar } = useSidebar();
 
   return (
-    <header className="flex justify-between gap-3 items-center p-6">
+    <header className="flex justify-between gap-3 items-center p-8">
       <div>
         <Button variant="ghost" size="icon" onClick={toggleSidebar}>
           <Menu />

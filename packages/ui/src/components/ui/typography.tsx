@@ -68,9 +68,7 @@ export function TypographyP({
   HTMLAttributes<HTMLParagraphElement>,
   HTMLParagraphElement
 >) {
-  return (
-    <p className={cn(' [&:not(:first-child)]:mt-6', className)} {...rest} />
-  );
+  return <p className={cn('', className)} {...rest} />;
 }
 
 export function TypographyBlockquote({

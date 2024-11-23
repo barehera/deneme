@@ -1,6 +1,8 @@
 import * as React from 'react';
 
 import { cn } from '@ui/lib/utils';
+import { TypographyH3, TypographyP } from './typography';
+import type { LucideIcon, LucideProps } from 'lucide-react';
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -23,17 +25,47 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex flex-col space-y-1.5 p-6', className)}
+    className={cn('flex justify-between items-center  p-6', className)}
     {...props}
   />
 ));
 CardHeader.displayName = 'CardHeader';
 
+const CardActions = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn('flex items-center', className)} {...props} />
+));
+CardActions.displayName = 'CardActions';
+
+const CardInfo = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & {
+    icon?: React.ReactNode;
+    title: string;
+    description: string;
+  }
+>(({ className, icon, title, description, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn('flex flex-col space-y-1.5', className)}
+    {...props}
+  >
+    <CardTitle className="flex items-center gap-2">
+      {icon}
+      {title}
+    </CardTitle>
+    <CardDescription>{description}</CardDescription>
+  </div>
+));
+CardInfo.displayName = 'CardInfo';
+
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
-  <h3
+  <TypographyH3
     ref={ref}
     className={cn(
       'text-2xl font-semibold leading-none tracking-tight',
@@ -48,7 +80,7 @@ const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <p
+  <TypographyP
     ref={ref}
     className={cn('text-sm text-muted-foreground', className)}
     {...props}
@@ -83,4 +115,6 @@ export {
   CardTitle,
   CardDescription,
   CardContent,
+  CardInfo,
+  CardActions,
 };
