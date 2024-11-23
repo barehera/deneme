@@ -52,7 +52,7 @@ import {
 
 export function AppSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader className="items-center">
         <Logo />
       </SidebarHeader>
@@ -119,7 +119,7 @@ function NavMain({
               </Collapsible>
             ) : (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton tooltip={item.title} asChild>
                   <Link href={item.url}>
                     {item.icon && <item.icon />}
                     <span>{item.title}</span>

@@ -12,15 +12,7 @@ export function ThemeProvider({
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
-      themes={[
-        'light',
-        'dark',
-        'forest',
-        'ocean',
-        'sunset',
-        'lavender',
-        'desert',
-      ]}
+      themes={['light', 'dark']}
       {...props}
     >
       {children}

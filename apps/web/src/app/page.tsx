@@ -11,7 +11,7 @@ import { Input } from '@ui/components/ui/input';
 
 export default function Page() {
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid lg:grid-cols-3 gap-6">
       <Card>
         <CardHeader>
           <CardTitle>Create project</CardTitle>
