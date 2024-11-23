@@ -4,6 +4,10 @@ import type React from 'react';
 
 import '@repo/ui/globals.css';
 import { ThemeProvider } from '@/providers/theme-provider';
+import { SidebarProvider } from '@ui/components/ui/sidebar';
+import { AppSidebar } from './components/AppSidebar';
+
+import AppHeader from './components/AppHeader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,7 +28,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <SidebarProvider>
+            <AppSidebar />
+            <div className="w-full flex flex-col">
+              <AppHeader />
+              <main className="flex-grow px-6 pb-6">{children}</main>
+            </div>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
