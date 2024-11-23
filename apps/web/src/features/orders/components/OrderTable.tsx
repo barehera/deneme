@@ -66,7 +66,7 @@ const OrderTable = () => {
         </CardActions>
       </CardHeader>
       <CardContent>
-        <DataTable columns={columns} data={data} />
+        <DataTable columns={columns} data={data} multiselect />
       </CardContent>
     </Card>
   );
