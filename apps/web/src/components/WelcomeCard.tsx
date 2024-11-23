@@ -8,6 +8,9 @@ import {
 import React from 'react';
 import { STATS } from '../constants/stats';
 import { Separator } from '@ui/components/ui/separator';
+import { Avatar, AvatarFallback, AvatarImage } from '@ui/components/ui/avatar';
+import { DUMMY_USER } from '@/constants/dummy';
+import { User } from 'lucide-react';
 
 const WelcomeCard = () => {
   return (
@@ -41,10 +44,20 @@ const StatList = () => {
 };
 
 const Greeting = () => {
+  const user = DUMMY_USER;
+
   return (
-    <div>
-      <TypographyP>Welcome</TypographyP>
-      <TypographyH4>Mr. Cuban!</TypographyH4>
+    <div className="flex items-center gap-4">
+      <Avatar className="w-16 h-16">
+        <AvatarImage src={user.avatar} />
+        <AvatarFallback>
+          <User />
+        </AvatarFallback>
+      </Avatar>
+      <div>
+        <TypographyP>Welcome</TypographyP>
+        <TypographyH4>Mr. Cuban!</TypographyH4>
+      </div>
     </div>
   );
 };
