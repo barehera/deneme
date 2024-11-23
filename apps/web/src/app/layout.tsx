@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import type React from 'react';
 
 import '@repo/ui/globals.css';
-import { ThemeProvider } from '@/providers/theme-provider';
+import { ThemeProvider } from '@/providers/ThemeProvider';
 import { SidebarProvider } from '@ui/components/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
 import AppHeader from '@/components/AppHeader';
