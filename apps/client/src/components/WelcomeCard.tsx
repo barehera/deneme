@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardHeader } from '@ui/components/ui/card';
 import {
   TypographyH4,
@@ -11,6 +13,7 @@ import { Separator } from '@ui/components/ui/separator';
 import { Avatar, AvatarFallback, AvatarImage } from '@ui/components/ui/avatar';
 import { DUMMY_USER } from '@/constants/dummy';
 import { User } from 'lucide-react';
+import { useBearStore } from '@/store/useBearStore';
 
 const WelcomeCard = () => {
   return (
@@ -44,6 +47,7 @@ const StatList = () => {
 };
 
 const Greeting = () => {
+  const bears = useBearStore((state) => state.bears);
   const user = DUMMY_USER;
 
   return (
@@ -55,7 +59,7 @@ const Greeting = () => {
         </AvatarFallback>
       </Avatar>
       <div>
-        <TypographyP>Welcome</TypographyP>
+        <TypographyP>Welcome, You have {bears} bears</TypographyP>
         <TypographyH4>Mr. Cuban!</TypographyH4>
       </div>
     </div>
