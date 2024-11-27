@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@fepatex/ui",
   "version": "0.0.0",
   "description": "UI",
   "private": true,
@@ -12,7 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "@repo/tsconfig": "workspace:*",
+    "@fepatex/tsconfig": "workspace:*",
     "@types/node": "20.14.15",
     "@types/react": "18.3.12",
     "autoprefixer": "10.4.20",

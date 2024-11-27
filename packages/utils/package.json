@@ -1,5 +1,5 @@
 {
-  "name": "@repo/utils",
+  "name": "@fepatex/utils",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -15,7 +15,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@repo/tsconfig": "workspace:*",
+    "@fepatex/tsconfig": "workspace:*",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "react": "18.3.1",

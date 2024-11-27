@@ -1,7 +1,7 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 
-import '@repo/ui/globals.css';
+import '@fepatex/ui/globals.css';
 
 const preview: Preview = {
   parameters: {

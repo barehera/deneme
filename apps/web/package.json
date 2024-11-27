@@ -1,5 +1,5 @@
 {
-  "name": "@repo/web",
+  "name": "@fepatex/web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -16,7 +16,7 @@
     "test:cov:ui": "vitest --ui --coverage"
   },
   "dependencies": {
-    "@repo/ui": "workspace:*",
+    "@fepatex/ui": "workspace:*",
     "@t3-oss/env-nextjs": "0.10.1",
     "@tanstack/react-query": "^5.61.5",
     "@tanstack/react-table": "^8.20.5",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@next/bundle-analyzer": "14.2.18",
-    "@repo/tsconfig": "workspace:*",
+    "@fepatex/tsconfig": "workspace:*",
     "@testing-library/jest-dom": "6.4.8",
     "@testing-library/react": "16.0.1",
     "@types/node": "20.14.15",

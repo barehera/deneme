@@ -1,5 +1,5 @@
 import path from 'node:path';
-import uiConfig from '@repo/ui/tailwind.config';
+import uiConfig from '@fepatex/ui/tailwind.config';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {

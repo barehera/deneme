@@ -3,7 +3,7 @@
 import nextra from 'nextra';
 
 const nextConfig = {
-  transpilePackages: ['@repo/ui'],
+  transpilePackages: ['@fepatex/ui'],
   reactStrictMode: true,
 };
 
