@@ -47,7 +47,7 @@ const config: StorybookConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         '@fepatex/ui': path.resolve(__dirname, '../../../packages/ui/src'),
-        '@fepatex/web': path.resolve(__dirname, '../../../apps/web/src'),
+        '@fepatex/client': path.resolve(__dirname, '../../../apps/web/src'),
       };
     }
     return config;

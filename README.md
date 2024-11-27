@@ -65,20 +65,20 @@ graph TD
     A[Turborepo] --> B[Apps]
     A --> C[Packages]
     B --> D[@fepatex/docs]
-    B --> E[@fepatex/web]
+    B --> E[@fepatex/client]
     B --> F[@fepatex/storybook]
     C --> G[@fepatex/ui]
     C --> H[@fepatex/utils]
     C --> I[@fepatex/tsconfig]
 ```
 
-| App/Package         | Description                                                                                                    |
-| ------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `@fepatex/docs`     | Documentation site powered by [Nextra 3 alpha](https://the-guild.dev/blog/nextra-3) 📖                         |
-| `@fepatex/web`      | Main Next.js web application 🌐                                                                                |
-| `@fepatex/ui`       | Core React components and design system shared by both `web` and `docs` applications (powered by shadcn/ui) 🎨 |
-| `@fepatex/utils`    | Shared React utilities 🛠️                                                                                      |
-| `@fepatex/tsconfig` | Shared `tsconfig.json` configurations 🛡️                                                                       |
+| App/Package         | Description                                                                                                                              |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `@fepatex/docs`     | Documentation site powered by [Nextra 3 alpha](https://the-guild.dev/blog/nextra-3) 📖                                                   |
+| `@fepatex/client`   | Fepatex client portal Next.js web application 🌐                                                                                         |
+| `@fepatex/ui`       | Core React components and design system shared by both `client portal`, `admin-portal` and `docs` applications (powered by shadcn/ui) 🎨 |
+| `@fepatex/utils`    | Shared React utilities 🛠️                                                                                                                |
+| `@fepatex/tsconfig` | Shared `tsconfig.json` configurations 🛡️                                                                                                 |
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). 💪
 
@@ -95,7 +95,7 @@ This Turborepo has some additional tools already set up for you:
 
 ### Storybook 📚
 
-This Turborepo includes Storybook for component development and documentation. Storybook is set up for both the `@fepatex/web` and `@fepatex/ui` packages, allowing the development and showcasing of components from both your main application and your shared UI library.
+This Turborepo includes Storybook for component development and documentation. Storybook is set up for both the `@fepatex/client` and `@fepatex/ui` packages, allowing the development and showcasing of components from both your main application and your shared UI library.
 
 To run Storybook:
 
@@ -111,7 +111,7 @@ Storybook is configured to find stories in the following locations:
 
 - `apps/storybook/src/**/*.mdx`
 - `apps/storybook/src/**/*.stories.@(js|jsx|mjs|ts|tsx)`
-- `apps/web/src/**/*.stories.@(js|jsx|mjs|ts|tsx)`
+- `apps/client/src/**/*.stories.@(js|jsx|mjs|ts|tsx)`
 - `packages/ui/src/**/*.stories.@(js|jsx|mjs|ts|tsx)`
 
 This configuration allows you to write stories for components in both your web application and your shared UI library.
@@ -243,7 +243,7 @@ The `apps/storybook` is automatically deployed to GitHub Pages using a custom wo
 - **Workflow File**: You can find the deployment workflow at `.github/workflows/storybook-deploy.yml`
 - **Deployment URL**: The deployed Storybook can be accessed at [https://gmickel.github.io/turborepo-shadcn-nextjs/](https://gmickel.github.io/turborepo-shadcn-nextjs/)
 
-## Useful Links and Thanks 🙏
+## Useful Links
 
 ### Build Tools and Configuration
 
@@ -272,23 +272,3 @@ The `apps/storybook` is automatically deployed to GitHub Pages using a custom wo
 
 - [Storybook Documentation](https://storybook.js.org/docs)
 - [Changesets Documentation](https://github.com/changesets/changesets)
-
-## Contributors 👨‍💻
-
-<!-- readme: collaborators, contributors -start -->
-<table>
-
-    <tbody>
-    	<tr>
-            <td align="center">
-                <a href="https://github.com/gmickel">
-                    <img src="https://avatars.githubusercontent.com/u/139907?v=4" width="100;" alt="gmickel"/>
-                    <br />
-                    <sub><b>Gordon Mickel</b></sub>
-                </a>
-            </td>
-    	</tr>
-    <tbody>
-
-</table>
-<!-- readme: collaborators, contributors -end -->
