@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/providers/ThemeProvider';
 import { SidebarProvider } from '@ui/components/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
 import AppHeader from '@/components/AppHeader';
+import TanstackQueryProvider from '@/providers/TanstackQueryProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,15 +28,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider>
-          <SidebarProvider>
-            <AppSidebar />
-            <div className="w-full flex flex-col">
-              <AppHeader />
-              <main className="flex-grow container mx-auto">{children}</main>
-            </div>
-          </SidebarProvider>
-        </ThemeProvider>
+        <TanstackQueryProvider>
+          <ThemeProvider>
+            <SidebarProvider>
+              <AppSidebar />
+              <div className="w-full flex flex-col">
+                <AppHeader />
+                <main className="flex-grow container mx-auto">{children}</main>
+              </div>
+            </SidebarProvider>
+          </ThemeProvider>
+        </TanstackQueryProvider>
       </body>
     </html>
   );

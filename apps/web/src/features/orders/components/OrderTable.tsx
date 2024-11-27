@@ -21,34 +21,23 @@ import {
   CardHeader,
   CardInfo,
 } from '@ui/components/ui/card';
-
-export type Order = {
-  id: string;
-  createdAt: Date;
-  status: 'Pending' | 'Processing' | 'Success' | 'Failed';
-  amount: string;
-  paymentMethod: string;
-};
-
-const data: Order[] = [
-  {
-    id: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
-    createdAt: new Date(),
-    status: 'Pending',
-    amount: '100',
-    paymentMethod: 'Credit Card',
-  },
-  {
-    id: '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed',
-    createdAt: new Date(),
-    status: 'Pending',
-    amount: '100',
-    paymentMethod: 'Credit Card',
-  },
-];
+import type { DummyOrder } from '../types';
+import useGetOrders from '../hooks/useGetOrders';
 
 const OrderTable = () => {
   const { columns } = useOrderColumns();
+  const getOrdersQuery = useGetOrders();
+
+  const renderCardContent = () => {
+    if (getOrdersQuery.isLoading) return <div>Loading...</div>;
+    if (getOrdersQuery.isError)
+      return <div>{getOrdersQuery.error.message}</div>;
+    if (!getOrdersQuery.data) return <div>No data</div>;
+
+    return (
+      <DataTable columns={columns} data={getOrdersQuery.data} multiselect />
+    );
+  };
 
   return (
     <Card>
@@ -65,9 +54,7 @@ const OrderTable = () => {
           </Button>
         </CardActions>
       </CardHeader>
-      <CardContent>
-        <DataTable columns={columns} data={data} multiselect />
-      </CardContent>
+      <CardContent>{renderCardContent()}</CardContent>
     </Card>
   );
 };
@@ -75,7 +62,7 @@ const OrderTable = () => {
 export default OrderTable;
 
 const useOrderColumns = () => {
-  const columns: ColumnDef<Order>[] = [
+  const columns: ColumnDef<DummyOrder>[] = [
     {
       accessorKey: 'id',
       header: 'Order ID',
